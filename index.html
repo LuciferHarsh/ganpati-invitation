@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ganpati Utsav Invitation | Rajput Parivar</title>
+<meta name="description" content="You are invited — Ganpati Utsav celebration with the Rajput Parivar, 14th September, Sangvi, Pune.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Mukta:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Falling marigold petals, ambient throughout -->
+<div class="petal-field" id="petalField" aria-hidden="true"></div>
+
+<!-- Language toggle -->
+<button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">
+  <span class="lang-toggle__opt lang-toggle__opt--en" data-active="true">EN</span>
+  <span class="lang-toggle__divider">/</span>
+  <span class="lang-toggle__opt lang-toggle__opt--mr">मर</span>
+</button>
+
+<!-- ===================== GATE / LANDING SCREEN ===================== -->
+<section class="gate" id="gate">
+  <div class="gate__arch">
+    <svg class="gate__motif" viewBox="0 0 200 60" aria-hidden="true">
+      <path d="M0 60 Q 100 -10 200 60" fill="none" stroke="url(#goldline)" stroke-width="2"/>
+      <circle cx="100" cy="14" r="6" fill="url(#goldline)"/>
+      <defs>
+        <linearGradient id="goldline" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#D4AF37"/>
+          <stop offset="0.5" stop-color="#F3D583"/>
+          <stop offset="1" stop-color="#D4AF37"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <p class="gate__eyebrow" data-i18n="gate_eyebrow">Ganpati Bappa Morya</p>
+  <h1 class="gate__title" data-i18n="gate_title">You Are Invited</h1>
+  <p class="gate__subtitle" data-i18n="gate_subtitle">Ganpati Utsav · 14th September</p>
+
+  <button class="gate__button" id="openInviteBtn" type="button">
+    <span data-i18n="gate_button">Open the Invitation</span>
+    <svg class="gate__button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l12 8-12 8V4z" fill="currentColor"/></svg>
+  </button>
+
+  <div class="gate__hint" data-i18n="gate_hint">Tap to open the doors</div>
+</section>
+
+<!-- ===================== TEMPLE DOORS (reveal animation) ===================== -->
+<div class="doors" id="doors" aria-hidden="true">
+  <div class="door door--left"><div class="door__inlay"></div></div>
+  <div class="door door--right"><div class="door__inlay"></div></div>
+</div>
+
+<!-- ===================== MAIN INVITATION ===================== -->
+<main class="invite" id="invite" hidden>
+
+  <!-- Hero: animated Ganpati illustration -->
+  <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+
+    <img src="images/ganpati-photo.jpg" alt="Shree Ganpati" class="ganpati-photo" id="ganpatiPhoto"
+      onerror="this.remove(); document.getElementById('ganpatiSvgFallback').style.display='block';">
+
+    <div id="ganpatiSvgFallback" style="display:none;">
+    <svg class="ganpati" viewBox="0 0 320 340" role="img" aria-labelledby="ganpatiTitle">
+      <title id="ganpatiTitle">Illustration of Lord Ganesha</title>
+      <defs>
+        <radialGradient id="haloGrad" cx="50%" cy="45%" r="60%">
+          <stop offset="0%" stop-color="#F3D583" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#F3D583" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#E8A857"/>
+          <stop offset="1" stop-color="#D98A3D"/>
+        </linearGradient>
+        <linearGradient id="crownGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F3D583"/>
+          <stop offset="1" stop-color="#C1972B"/>
+        </linearGradient>
+        <linearGradient id="clothGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#C1272D"/>
+          <stop offset="1" stop-color="#8C1620"/>
+        </linearGradient>
+      </defs>
+
+      <circle class="ganpati__halo" cx="160" cy="150" r="150" fill="url(#haloGrad)"/>
+
+      <!-- ears -->
+      <path class="ganpati__ear ganpati__ear--left" d="M78 140 C 30 120, 20 200, 70 220 C 95 230, 110 200, 100 170 Z" fill="url(#skinGrad)" stroke="#8C5A22" stroke-width="2"/>
+      <path class="ganpati__ear ganpati__ear--right" d="M242 140 C 290 120, 300 200, 250 220 C 225 230, 210 200, 220 170 Z" fill="url(#skinGrad)" stroke="#8C5A22" stroke-width="2"/>
+
+      <!-- crown -->
+      <path d="M110 90 C 120 50, 200 50, 210 90 L 200 100 C 190 70, 130 70, 120 100 Z" fill="url(#crownGrad)" stroke="#8C5A22" stroke-width="1.5"/>
+      <circle cx="160" cy="55" r="10" fill="url(#crownGrad)" stroke="#8C5A22" stroke-width="1.5"/>
+      <circle cx="160" cy="55" r="4" fill="#C1272D"/>
+
+      <!-- head -->
+      <ellipse cx="160" cy="150" rx="72" ry="78" fill="url(#skinGrad)" stroke="#8C5A22" stroke-width="2"/>
+
+      <!-- eyes -->
+      <ellipse cx="135" cy="140" rx="7" ry="5" fill="#3A2412"/>
+      <ellipse cx="185" cy="140" rx="7" ry="5" fill="#3A2412"/>
+
+      <!-- tusk -->
+      <path d="M182 178 L 196 190 L 184 192 Z" fill="#FFF8E7" stroke="#8C5A22" stroke-width="1"/>
+
+      <!-- trunk (animated) -->
+      <path class="ganpati__trunk" d="M148 168 C 140 195, 168 205, 160 230 C 154 248, 130 250, 132 268"
+        fill="none" stroke="url(#skinGrad)" stroke-width="20" stroke-linecap="round"/>
+
+      <!-- body / shawl -->
+      <path d="M96 250 C 96 210, 224 210, 224 250 L 234 320 C 234 335, 86 335, 86 320 Z" fill="url(#clothGrad)" stroke="#6B1620" stroke-width="2"/>
+      <path d="M100 250 C 100 220, 220 220, 220 250" fill="none" stroke="#F3D583" stroke-width="3" opacity="0.8"/>
+      <circle cx="160" cy="285" r="16" fill="#F3D583" stroke="#8C5A22" stroke-width="1.5"/>
+      <circle cx="160" cy="285" r="6" fill="#C1272D"/>
+
+      <!-- modak in hand -->
+      <path d="M228 240 C 240 228, 256 236, 250 250 C 246 262, 226 260, 228 240 Z" fill="#F3D583" stroke="#8C5A22" stroke-width="1.5"/>
+    </svg>
+    </div>
+  </section>
+
+  <!-- Shloka -->
+  <section class="shloka">
+    <div class="shloka__divider" aria-hidden="true">
+      <span></span><svg viewBox="0 0 24 24" class="shloka__divider-icon"><circle cx="12" cy="12" r="5" fill="#D4AF37"/></svg><span></span>
+    </div>
+    <p class="shloka__sanskrit">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</p>
+    <p class="shloka__meaning" data-i18n="shloka_meaning">O Lord of the curved trunk, mighty in form, radiant as a million suns — please make all my endeavours free of obstacles, always.</p>
+  </section>
+
+  <!-- Inviter -->
+  <section class="inviter">
+    <div class="inviter__frame">
+      <img src="images/dad-photo.jpg" alt="" class="inviter__photo" id="inviterPhoto"
+        onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';">
+      <div class="inviter__photo-fallback" id="photoFallback">
+        <svg viewBox="0 0 24 24" width="40" height="40" aria-hidden="true"><path fill="#D4AF37" d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-4 0-9 2-9 6v2h18v-2c0-4-5-6-9-6z"/></svg>
+        <span data-i18n="photo_fallback">Add Photo Here</span>
+      </div>
+    </div>
+    <p class="inviter__line" data-i18n="inviter_line">With the blessings of Ganpati Bappa, and joy in our hearts, we invite you to celebrate with</p>
+    <h2 class="inviter__family" data-i18n="family_name">Rajput Parivar</h2>
+  </section>
+
+  <!-- Event details -->
+  <section class="details">
+    <div class="details__card">
+      <div class="details__item">
+        <svg class="details__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#D4AF37" d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 8H5v10h14V10z"/></svg>
+        <div>
+          <span class="details__label" data-i18n="date_label">Date</span>
+          <span class="details__value" data-i18n="date_value">Sunday, 14th September</span>
+        </div>
+      </div>
+      <div class="details__item">
+        <svg class="details__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#D4AF37" d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+        <div>
+          <span class="details__label" data-i18n="venue_label">Venue</span>
+          <span class="details__value" data-i18n="venue_value">Ganesh Chambers, Flat No. 11, Sangvi, Pune – 27</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing message -->
+  <section class="closing">
+    <p class="closing__message" data-i18n="closing_message">Your presence would mean the world to us, and turn this celebration into something truly complete. We look forward to sharing this happy occasion with you.</p>
+    <div class="closing__om" aria-hidden="true">ॐ</div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp">
+    <button class="rsvp__button" id="rsvpBtn" type="button">
+      <svg class="rsvp__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+      <span data-i18n="rsvp_button">Accept the Invitation</span>
+    </button>
+    <p class="rsvp__thanks" id="rsvpThanks" hidden>
+      <span data-i18n="rsvp_thanks">Thank you for accepting! We're so glad you'll be with us — see you on 14th September.</span>
+    </p>
+  </section>
+
+  <!-- Signature -->
+  <footer class="signature">
+    <p class="signature__label" data-i18n="signature_label">With warm regards</p>
+    <p class="signature__name">Harsh Ajaysing Rajput</p>
+    <button class="back-button" id="backBtn" type="button">
+      <svg class="back-button__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 11H7.8l4.6-4.6L11 5l-7 7 7 7 1.4-1.4L7.8 13H20z"/></svg>
+      <span data-i18n="back_button">Back to Invitation</span>
+    </button>
+  </footer>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

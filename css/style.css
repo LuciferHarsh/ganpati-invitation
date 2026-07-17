@@ -293,13 +293,12 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 
 /* Inviter */
 .inviter { text-align: center; padding: var(--space-4) 0; }
+
 .inviter__frame {
   width: 300px; height: 300px;
   margin: 0 auto var(--space-3);
-  /*border: 3px solid var(--gold);*/
   padding: 6px;
   position: relative;
- /* background: conic-gradient(from 0deg, var(--gold), var(--marigold), var(--gold));*/
 }
 .inviter__frame::after {
   content: "";

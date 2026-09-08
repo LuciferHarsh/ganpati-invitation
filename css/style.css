@@ -374,7 +374,11 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   text-align: center;
 }
 
-/* Decorative divider */
+
+/* =========================================================
+   DECORATIVE DIVIDER
+   ========================================================= */
+
 .location__decor {
   display: flex;
   align-items: center;
@@ -448,7 +452,7 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   max-width: 620px;
 
   margin: 0 auto;
-  padding: clamp(22px, 5vw, 34px);
+  padding: clamp(16px, 4vw, 24px);
 
   box-sizing: border-box;
 
@@ -466,7 +470,10 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 }
 
 
-/* Slight desktop hover effect */
+/* =========================================================
+   SLIGHT DESKTOP HOVER EFFECT
+   ========================================================= */
+
 @media (hover: hover) {
 
   .location__card:hover {
@@ -480,8 +487,163 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 
 
 /* =========================================================
+   CLICKABLE MAP
+   ========================================================= */
+
+.location__map {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  height: clamp(230px, 42vw, 360px);
+
+  margin: 0 0 28px;
+
+  overflow: hidden;
+
+  border-radius: clamp(12px, 3vw, 18px);
+
+  border: 1px solid rgba(212, 175, 55, 0.60);
+
+  background: #160707;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MAP IMAGE
+   ========================================================= */
+
+.location__map img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+
+/* =========================================================
+   MAP DARK OVERLAY
+   ========================================================= */
+
+.location__map::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.04);
+
+  pointer-events: none;
+
+  transition: background 0.3s ease;
+}
+
+
+/* =========================================================
+   MAP OPEN LABEL
+   ========================================================= */
+
+.location__mapOverlay {
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 9px 18px;
+
+  border: 1px solid #D4AF37;
+
+  border-radius: 999px;
+
+  background: rgba(55, 8, 8, 0.94);
+
+  color: #D4AF37;
+
+  font-family: "Mukta", sans-serif;
+
+  font-size: clamp(13px, 2.5vw, 16px);
+
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  white-space: nowrap;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Map overlay icon */
+.location__mapOverlay span:first-child {
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   MAP HOVER EFFECT
+   ========================================================= */
+
+@media (hover: hover) {
+
+  .location__map:hover img {
+    transform: scale(1.04);
+  }
+
+  .location__map:hover::after {
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  .location__map:hover .location__mapOverlay {
+    background: #D4AF37;
+
+    color: #4A1515;
+
+    box-shadow:
+      0 6px 18px rgba(212, 175, 55, 0.25);
+  }
+
+}
+
+
+/* =========================================================
    LOCATION ICON
    ========================================================= */
+
+/*
+   Kept in the CSS so your existing HTML remains compatible.
+   If you remove the old location icon from HTML, this simply
+   won't affect anything.
+*/
 
 .location__icon {
   width: clamp(52px, 12vw, 68px);
@@ -545,6 +707,14 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
    GOOGLE MAPS BUTTON
    ========================================================= */
 
+/*
+   This remains here in case you keep the separate button
+   in your HTML.
+
+   If you are using the clickable map version only,
+   you can remove the button from HTML.
+*/
+
 .location__button {
   display: inline-flex;
 
@@ -592,11 +762,12 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 }
 
 
-/* Desktop hover */
+/* Desktop button hover */
 @media (hover: hover) {
 
   .location__button:hover {
     background: #D4AF37;
+
     color: #4A1515;
 
     transform: translateY(-2px);
@@ -642,7 +813,23 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   }
 
   .location__card {
-    padding: 24px 18px;
+    padding: 14px;
+  }
+
+  .location__map {
+    height: 260px;
+
+    margin-bottom: 24px;
+
+    border-radius: 14px;
+  }
+
+  .location__mapOverlay {
+    bottom: 14px;
+
+    padding: 8px 14px;
+
+    font-size: 14px;
   }
 
   .location__address p {
@@ -671,7 +858,13 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   }
 
   .location__card {
-    padding: 21px 14px;
+    padding: 12px;
+  }
+
+  .location__map {
+    height: 225px;
+
+    border-radius: 12px;
   }
 
   .location__title {
@@ -692,8 +885,18 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 
   .location__button {
     max-width: 100%;
+
     padding: 11px 14px;
+
     font-size: 14px;
+  }
+
+  .location__mapOverlay {
+    font-size: 13px;
+
+    padding: 8px 12px;
+
+    gap: 6px;
   }
 
 }
@@ -711,11 +914,24 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
   }
 
   .location__card {
-    padding: 20px 12px;
+    padding: 10px;
+  }
+
+  .location__map {
+    height: 210px;
+  }
+
+  .location__mapOverlay {
+    gap: 5px;
+
+    font-size: 12px;
+
+    padding: 7px 10px;
   }
 
   .location__button {
     gap: 6px;
+
     font-size: 13px;
   }
 

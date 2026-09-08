@@ -167,22 +167,55 @@
   /* =========================================================
      RSVP — accept invitation
      ========================================================= */
-  function initRsvp() {
-    var btn = document.getElementById("rsvpBtn");
-    var thanks = document.getElementById("rsvpThanks");
-    if (!btn || !thanks) return;
 
-    btn.addEventListener("click", function () {
-      btn.classList.add("is-fading");
-      thanks.hidden = false;
-      requestAnimationFrame(function () {
-        thanks.classList.add("is-shown");
-      });
-      window.setTimeout(function () {
-        btn.hidden = true;
-      }, 300);
+function initRsvp() {
+  var btn = document.getElementById("rsvpBtn");
+  var thanks = document.getElementById("rsvpThanks");
+  if (!btn || !thanks) return;
+
+  btn.addEventListener("click", function () {
+
+    // Your WhatsApp number
+    var phoneNumber = "917058312172";
+
+    // Message changes according to selected language
+    var message;
+
+    if (currentLang === "mr") {
+      message =
+        "🙏 नमस्कार हर्ष, आमंत्रणाबद्दल धन्यवाद! " +
+        "मी हे निमंत्रण आनंदाने स्वीकारतो/स्वीकारते आणि १४ सप्टेंबरला नक्की येईन. " +
+        "गणपती बाप्पा मोरया! 🙏";
+    } else {
+      message =
+        "🙏 Hi Harsh, thank you for the invitation! " +
+        "I’m happy to accept and will be there on 14th September. " +
+        "Ganpati Bappa Morya! 🙏";
+    }
+
+    // Create WhatsApp URL
+    var whatsappURL =
+      "https://wa.me/" +
+      phoneNumber +
+      "?text=" +
+      encodeURIComponent(message);
+
+    // Open WhatsApp with the message
+    window.open(whatsappURL, "_blank");
+
+    // Keep the existing thank-you animation
+    btn.classList.add("is-fading");
+    thanks.hidden = false;
+
+    requestAnimationFrame(function () {
+      thanks.classList.add("is-shown");
     });
-  }
+
+    window.setTimeout(function () {
+      btn.hidden = true;
+    }, 300);
+  });
+}
 
   /* =========================================================
      Scroll-triggered section reveal

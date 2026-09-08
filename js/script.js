@@ -25,9 +25,6 @@
       date_label: "Date",
       date_value: "Monday, 14th September",
 
-      venue_label: "Venue",
-      venue_value:
-        "Ganesh Chambers, Flat No. 11, Sangvi, Pune – 27",
 
       closing_message:
         "Your presence would mean the world to us, and turn this celebration into something truly complete. We look forward to sharing this happy occasion with you.",
@@ -61,10 +58,6 @@
 
       date_label: "दिनांक",
       date_value: "सोमवार, १४ सप्टेंबर",
-
-      venue_label: "ठिकाण",
-      venue_value:
-        "गणेश चेंबर्स, फ्लॅट नं. ११, संगवी, पुणे – २७",
 
       closing_message:
         "आपली उपस्थिती आमच्यासाठी खूप मोलाची असेल आणि या सोहळ्याला खऱ्या अर्थाने पूर्णत्व देईल. आपणास भेटण्यास आम्ही उत्सुक आहोत.",

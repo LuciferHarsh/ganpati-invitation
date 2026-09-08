@@ -16,7 +16,7 @@
       inviter_line: "With the blessings of Ganpati Bappa, and joy in our hearts, we invite you to celebrate with",
       family_name: "Rajput Parivar",
       date_label: "Date",
-      date_value: "Sunday, 14th September",
+      date_value: "Monday, 14th September",
       venue_label: "Venue",
       venue_value: "Ganesh Chambers, Flat No. 11, Sangvi, Pune – 27",
       closing_message: "Your presence would mean the world to us, and turn this celebration into something truly complete. We look forward to sharing this happy occasion with you.",

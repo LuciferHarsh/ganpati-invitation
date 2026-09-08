@@ -361,6 +361,366 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; }
 }
 .details__value { display: block; font-size: 1.05rem; color: var(--ivory); line-height: 1.5; }
 
+/* =========================================================
+   LOCATION SECTION
+   ========================================================= */
+
+.location {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(45px, 8vw, 80px) clamp(16px, 5vw, 30px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Decorative divider */
+.location__decor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 3vw, 18px);
+  margin-bottom: 18px;
+}
+
+.location__decor span {
+  display: block;
+}
+
+.location__decor span:first-child,
+.location__decor span:last-child {
+  width: clamp(35px, 12vw, 75px);
+  height: 1px;
+  background: #D4AF37;
+  opacity: 0.8;
+}
+
+.location__decor span:nth-child(2) {
+  color: #D4AF37;
+  font-family: "Tiro Devanagari Marathi", serif;
+  font-size: clamp(20px, 5vw, 28px);
+  line-height: 1;
+}
+
+
+/* =========================================================
+   LOCATION TITLE
+   ========================================================= */
+
+.location__title {
+  margin: 0;
+  padding: 0;
+
+  color: #D4AF37;
+
+  font-family: "Yatra One", serif;
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 400;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   LOCATION SUBTITLE
+   ========================================================= */
+
+.location__subtitle {
+  max-width: 550px;
+
+  margin: 10px auto 28px;
+  padding: 0;
+
+  font-family: "Mukta", sans-serif;
+  font-size: clamp(15px, 2.5vw, 18px);
+  line-height: 1.6;
+
+  opacity: 0.85;
+}
+
+
+/* =========================================================
+   LOCATION CARD
+   ========================================================= */
+
+.location__card {
+  width: 100%;
+  max-width: 620px;
+
+  margin: 0 auto;
+  padding: clamp(22px, 5vw, 34px);
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: clamp(14px, 3vw, 22px);
+
+  background: rgba(0, 0, 0, 0.12);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Slight desktop hover effect */
+@media (hover: hover) {
+
+  .location__card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+      0 12px 35px rgba(0, 0, 0, 0.20);
+  }
+
+}
+
+
+/* =========================================================
+   LOCATION ICON
+   ========================================================= */
+
+.location__icon {
+  width: clamp(52px, 12vw, 68px);
+  height: clamp(52px, 12vw, 68px);
+
+  margin: 0 auto 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(28px, 7vw, 40px);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(212, 175, 55, 0.45);
+
+  background: rgba(212, 175, 55, 0.08);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOCATION HEADING
+   ========================================================= */
+
+.location__address h3 {
+  margin: 0 0 8px;
+
+  color: #D4AF37;
+
+  font-family: "Yatra One", serif;
+  font-size: clamp(21px, 4vw, 27px);
+  font-weight: 400;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   ADDRESS
+   ========================================================= */
+
+.location__address p {
+  margin: 0 auto clamp(20px, 4vw, 28px);
+
+  max-width: 500px;
+
+  font-family: "Mukta", sans-serif;
+  font-size: clamp(15px, 3vw, 18px);
+
+  line-height: 1.7;
+
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   GOOGLE MAPS BUTTON
+   ========================================================= */
+
+.location__button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  width: auto;
+  max-width: 100%;
+
+  min-height: 46px;
+
+  padding: 11px 22px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #D4AF37;
+  border-radius: 999px;
+
+  color: #D4AF37;
+
+  background: transparent;
+
+  text-decoration: none;
+
+  font-family: "Mukta", sans-serif;
+  font-size: clamp(14px, 2.5vw, 17px);
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Button icon */
+.location__button span:first-child {
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+
+/* Desktop hover */
+@media (hover: hover) {
+
+  .location__button:hover {
+    background: #D4AF37;
+    color: #4A1515;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 6px 18px rgba(212, 175, 55, 0.25);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .location {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .location__card {
+    max-width: 600px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .location {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .location__subtitle {
+    margin-bottom: 24px;
+  }
+
+  .location__card {
+    padding: 24px 18px;
+  }
+
+  .location__address p {
+    line-height: 1.6;
+  }
+
+  .location__button {
+    width: 100%;
+    max-width: 340px;
+
+    padding: 12px 18px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .location {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .location__card {
+    padding: 21px 14px;
+  }
+
+  .location__title {
+    font-size: 25px;
+  }
+
+  .location__subtitle {
+    font-size: 14px;
+  }
+
+  .location__address h3 {
+    font-size: 20px;
+  }
+
+  .location__address p {
+    font-size: 15px;
+  }
+
+  .location__button {
+    max-width: 100%;
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY NARROW SCREENS
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+  .location {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .location__card {
+    padding: 20px 12px;
+  }
+
+  .location__button {
+    gap: 6px;
+    font-size: 13px;
+  }
+
+}
+
 /* Closing */
 .closing { text-align: center; padding: var(--space-4) 0 var(--space-3); }
 .closing__message {

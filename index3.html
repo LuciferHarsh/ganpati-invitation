@@ -222,7 +222,7 @@
         onerror="this.style.display='none'; document.getElementById('ganpatiSvgFallback').style.display='block';"
       >
 
-
+ 
       <!-- SVG fallback -->
       <div
         id="ganpatiSvgFallback"
@@ -323,7 +323,7 @@
           </defs>
 
 
-          <!-- Halo -->
+          <!-- Halo 
           <circle
             class="ganpati__halo"
             cx="160"
@@ -333,7 +333,7 @@
           />
 
 
-          <!-- Ears -->
+          <!-- Ears 
           <path
             class="ganpati__ear ganpati__ear--left"
             d="M78 140 C30 120,20 200,70 220 C95 230,110 200,100 170 Z"
@@ -351,7 +351,7 @@
           />
 
 
-          <!-- Crown -->
+          <!-- Crown 
           <path
             d="M110 90 C120 50,200 50,210 90 L200 100 C190 70,130 70,120 100 Z"
             fill="url(#crownGrad)"
@@ -376,7 +376,7 @@
           />
 
 
-          <!-- Head -->
+          <!-- Head 
           <ellipse
             cx="160"
             cy="150"
@@ -386,9 +386,7 @@
             stroke="#8C5A22"
             stroke-width="2"
           />
-
-
-          <!-- Eyes -->
+          <!-- Eyes 
           <ellipse
             cx="135"
             cy="140"
@@ -406,7 +404,7 @@
           />
 
 
-          <!-- Tusk -->
+          <!-- Tusk 
           <path
             d="M182 178 L196 190 L184 192 Z"
             fill="#FFF8E7"
@@ -415,7 +413,7 @@
           />
 
 
-          <!-- Trunk -->
+          <!-- Trunk 
           <path
             class="ganpati__trunk"
             d="M148 168 C140 195,168 205,160 230 C154 248,130 250,132 268"
@@ -426,7 +424,7 @@
           />
 
 
-          <!-- Body / Shawl -->
+          <!-- Body / 
           <path
             d="M96 250 C96 210,224 210,224 250 L234 320 C234 335,86 335,86 320 Z"
             fill="url(#clothGrad)"
@@ -459,7 +457,7 @@
           />
 
 
-          <!-- Modak -->
+          <!-- Modak 
           <path
             d="M228 240 C240 228,256 236,250 250 C246 262,226 260,228 240 Z"
             fill="#F3D583"
@@ -473,7 +471,7 @@
 
     </section>
 
-
+-->
     <!-- =================================================
          SHLOKA
          ================================================= -->
@@ -678,8 +676,8 @@
     </section>
 
 
-    <!-- =================================================
-     LOCATION / GOOGLE MAPS
+  <!-- =================================================
+     LOCATION
      ================================================= -->
 <section class="location">
 
@@ -689,24 +687,36 @@
     <span></span>
   </div>
 
-  <h2
-    class="location__title"
-    data-i18n="location_title">
-    How to Reach Us
+  <h2 class="location__title" data-i18n="location_title">
+    Our Location
   </h2>
 
-  <p
-    class="location__subtitle"
-    data-i18n="location_subtitle">
+  <p class="location__subtitle" data-i18n="location_subtitle">
     We would be delighted to have you with us
   </p>
 
   <div class="location__card">
 
-    <div class="location__icon" aria-hidden="true">
-      📍
-    </div>
+    <!-- CLICKABLE MAP -->
+    <a
+      class="location__map"
+      href="https://maps.app.goo.gl/e4q9bnu6WVrBNtdh8"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open our location in Google Maps"
+    >
+      <img
+        src="images/location-map.jpg"
+        alt="Our location on the map"
+      >
 
+      <div class="location__mapOverlay">
+        <span>📍</span>
+        <span>Open in Google Maps</span>
+      </div>
+    </a>
+
+    <!-- ADDRESS -->
     <div class="location__address">
 
       <h3 data-i18n="location_heading">
@@ -719,20 +729,6 @@
       </p>
 
     </div>
-
-    <a
-      class="location__button"
-      href="https://maps.app.goo.gl/e4q9bnu6WVrBNtdh8"
-      target="_blank"
-      rel="noopener noreferrer">
-
-      <span>🗺️</span>
-
-      <span data-i18n="map_button">
-        View Location on Google Maps
-      </span>
-
-    </a>
 
   </div>
 
